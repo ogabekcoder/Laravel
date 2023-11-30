@@ -12,6 +12,7 @@ class Application extends Model
     protected $fillable = [
         'user_id',
         'subject',
+        'phone',
         'message',
         'file_url',
     ];

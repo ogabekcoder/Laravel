@@ -130,21 +130,30 @@
                     @else
                         <div
                             class='flex items-center'>
-                            <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
+                            <div
+                                class='w-full max-w-lg px-10 py-8 mx-auto bg-white dark:bg-slate-800 rounded-lg shadow-xl'>
                                 <div class='max-w-md mx-auto space-y-6'>
-                                    <form action="" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('applications.store')  }}" method="POST"
+                                          enctype="multipart/form-data">
                                         @csrf
-                                        <h2 class="text-2xl font-bold ">Submit your application</h2>
+                                        <h2 class="text-2xl font-bold dark:text-white">Submit your application</h2>
                                         <hr class="my-6">
-                                        <label class="uppercase text-sm font-bold opacity-70">Subject</label>
-                                        <input type="text"
-                                               class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
-                                        <label class="uppercase text-sm font-bold opacity-70">Message</label>
-                                        <textarea rows="5" type="text"
-                                                  class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none"></textarea>
+                                        <label
+                                            class="uppercase text-sm font-bold opacity-70 dark:text-white">Subject</label>
+                                        <input required type="text" name="subject"
+                                               class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 dark:text-black border-slate-200 focus:border-slate-600 focus:outline-none">
+                                        <label
+                                            class="uppercase text-sm font-bold opacity-70 dark:text-white">Phone</label>
+                                        <input required type="text" name="phone"
+                                               class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 dark:text-black border-slate-200 focus:border-slate-600 focus:outline-none"
+                                               value="+998">
+                                        <label
+                                            class="uppercase text-sm font-bold opacity-70 dark:text-white">Message</label>
+                                        <textarea required rows="5" name="message" type="text"
+                                                  class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 dark:text-black border-slate-200 focus:border-slate-600 focus:outline-none"></textarea>
                                         <label class="uppercase text-sm font-bold opacity-70">File</label>
-                                        <input type="file"
-                                               class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
+                                        <input type="file" name="file"
+                                               class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 dark:text-black border-slate-200 focus:border-slate-600 focus:outline-none">
                                         <input type="submit"
                                                class="py-3 px-6 my-2 bg-emerald-500 text-white font-medium rounded hover:bg-indigo-500 cursor-pointer ease-in-out duration-300"
                                                value="Send">
